@@ -1,6 +1,9 @@
 package com.careerdevs.gateway;
 
-public class APOD {
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+//@JsonInclude(JsonInclude.Include.NON_NULL)
+public class APOD extends ResponceObject {
 
     private String title;
     private String date;

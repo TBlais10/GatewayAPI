@@ -12,8 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class GatewayApplication {
 
-	private static final String MY_API_KEY = "hF4GZKXvAM5yV5lroYtw7icPcfp297Q8UJn8xgAd";
-
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
@@ -23,20 +21,7 @@ public class GatewayApplication {
 		return builder.build();
 	}
 
-	@GetMapping ("/")
-	public String rootRoute () {
-		return "Welcome Home";
-	}
 
-	@GetMapping("/apod")
-	public APOD apodInfo (RestTemplate restTemplate) {
-		String URL = "https://api.nasa.gov/planetary/apod?api_key=" + MY_API_KEY;
-
-		APOD apod = restTemplate.getForObject(URL, APOD.class);
-
-		return apod;
-
-	}
 
 
 }
